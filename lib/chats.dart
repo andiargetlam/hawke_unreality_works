@@ -15,7 +15,7 @@ class _ChatsPageState extends State<ChatsPage> {
       appBar: AppBar(
         backgroundColor: Color(0xFF086A77),
         title: Image.asset(
-          'assets/logo_gato.jpg',
+          'assets/Gatito.png',
           width: 106,
           height: 35,
         ),
@@ -52,7 +52,7 @@ class _ChatsPageState extends State<ChatsPage> {
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
                     leading: Image.asset(
-                      'assets/shop_image.jpg',
+                      'assets/shop_image.png',
                       width: 56,
                       height: 56,
                     ),

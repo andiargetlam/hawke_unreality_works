@@ -33,7 +33,7 @@ class _ShopDetailPageState extends State<ShopDetailPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset(
-                'assets/shop_image.jpg',
+                'assets/shop_image.png',
                 width: 359,
                 height: 246,
               ),

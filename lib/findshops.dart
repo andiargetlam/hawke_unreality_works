@@ -59,7 +59,7 @@ class _FindShopsPageState extends State<FindShopsPage> {
                       child: ListTile(
                         contentPadding: EdgeInsets.all(12),
                         leading: Image.asset(
-                          'assets/shop_image.jpg',
+                          'assets/shop_image.png',
                           width: 50, // Adjust this value to reduce the width
                           height: 71,
                         ),

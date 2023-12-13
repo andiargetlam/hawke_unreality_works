@@ -24,7 +24,7 @@ class _DashboardPageState extends State<DashboardPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
-              'assets/dash_car.jpg',
+              'assets/dash_car.png',
               width: 196,
               height: 166,
             ),

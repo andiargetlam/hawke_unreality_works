@@ -48,10 +48,8 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FadeInImage.assetNetwork(
-              placeholder:
-                  'assets/transparent.png', // Replace with your placeholder image
-              image: 'assets/Gatito.png',
+            Image.asset(
+              'assets/Gatito.png',
               width: 295,
               height: 98,
             ),
@@ -65,7 +63,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             SizedBox(height: 10),
             Image.asset(
-              'assets/logo_hawke.jpg',
+              'assets/SignatureWhite.png',
               width: 144,
               height: 65,
             ),
