@@ -24,7 +24,7 @@ class _RegisterPageState extends State<RegisterPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
-              'assets/logo_gato.jpg',
+              'assets/Gatito.png',
               width: 295,
               height: 98,
             ),
@@ -92,20 +92,23 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             SizedBox(height: 10),
             ElevatedButton(
-  onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => LoginPage()), // Replace with your login page
-    );
-  },
-  style: ButtonStyle(
-    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
-  ),
-  child: Text(
-    'Sign In',
-    style: TextStyle(color: Colors.white),
-  ),
-),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          LoginPage()), // Replace with your login page
+                );
+              },
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
+              ),
+              child: Text(
+                'Sign In',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
           ],
         ),
       ),

@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
-              'assets/logo_gato.jpg',
+              'assets/Gatito.png',
               width: 295,
               height: 98,
             ),
@@ -71,9 +71,9 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               children: <Widget>[
                 Checkbox(
-                    value: _rememberMe,
-                    onChanged: (value) {},
-                  ),
+                  value: _rememberMe,
+                  onChanged: (value) {},
+                ),
                 Text(
                   'Remember Me',
                   style: TextStyle(
@@ -87,23 +87,28 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => DashboardPage()), // Replace with your dashboard page
-                  );
-                },
-                style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          DashboardPage()), // Replace with your dashboard page
+                );
+              },
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
               ),
-                child: Text('Login',
+              child: Text(
+                'Login',
                 style: TextStyle(color: Colors.white),
               ),
             ),
-
             SizedBox(height: 10),
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => RegisterPage()), // Replace with your register page
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          RegisterPage()), // Replace with your register page
                 );
               },
               child: Text(

@@ -18,7 +18,9 @@ class _ConfirmPageState extends State<ConfirmPage> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => BookPage()), // Replace with your book page
+              MaterialPageRoute(
+                  builder: (context) =>
+                      BookPage()), // Replace with your book page
             );
           },
         ),
@@ -60,13 +62,17 @@ class _ConfirmPageState extends State<ConfirmPage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => QueuePage()), // Replace with your queue order page
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          QueuePage()), // Replace with your queue order page
                 );
               },
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
               ),
-              child: Text('Confirm',
+              child: Text(
+                'Confirm',
                 style: TextStyle(color: Colors.white),
               ),
             ),

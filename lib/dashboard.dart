@@ -14,7 +14,7 @@ class _DashboardPageState extends State<DashboardPage> {
       appBar: AppBar(
         backgroundColor: Color(0xFF086A77),
         title: Image.asset(
-          'assets/logo_gato.jpg',
+          'assets/Gatito.png',
           width: 106,
           height: 35,
         ),
@@ -47,7 +47,9 @@ class _DashboardPageState extends State<DashboardPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FindShopsPage()), // Replace with your find shops page
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              FindShopsPage()), // Replace with your find shops page
                     );
                   },
                 ),
@@ -61,11 +63,14 @@ class _DashboardPageState extends State<DashboardPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FindShopsPage()), // Replace with your find shops page
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              FindShopsPage()), // Replace with your find shops page
                     );
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
                   ),
                   child: Text(
                     'Hydrolic',
@@ -76,11 +81,14 @@ class _DashboardPageState extends State<DashboardPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FindShopsPage()), // Replace with your find shops page
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              FindShopsPage()), // Replace with your find shops page
                     );
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
                   ),
                   child: Text(
                     'Robot',
@@ -91,11 +99,14 @@ class _DashboardPageState extends State<DashboardPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FindShopsPage()), // Replace with your find shops page
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              FindShopsPage()), // Replace with your find shops page
                     );
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
                   ),
                   child: Text(
                     'Regular',
@@ -106,11 +117,14 @@ class _DashboardPageState extends State<DashboardPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FindShopsPage()), // Replace with your find shops page
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              FindShopsPage()), // Replace with your find shops page
                     );
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
                   ),
                   child: Text(
                     'Steam',
@@ -126,7 +140,9 @@ class _DashboardPageState extends State<DashboardPage> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ChatsPage()), // Replace with your chat page
+            MaterialPageRoute(
+                builder: (context) =>
+                    ChatsPage()), // Replace with your chat page
           );
         },
         child: Icon(Icons.chat),
