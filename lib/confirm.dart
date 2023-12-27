@@ -19,64 +19,57 @@ class _ConfirmPageState extends State<ConfirmPage> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) =>
-                      BookPage()), // Replace with your book page
+                builder: (context) => BookPage(), // Replace with your book page
+              ),
             );
           },
         ),
-        title: Text('Confirm your Order'),
+        title: Text('Confirm your Carwash Order'),
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(16),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
-              'Shop: Dummy Shop', // Replace with your actual shop
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Order Type: Dummy Order Type', // Replace with your actual order type
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Arrival Time: Dummy Arrival Time', // Replace with your actual arrival time
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Details to be Added: Dummy Details', // Replace with your actual details to be added
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
+            buildTableRow('Carwash Package:', 'Premium Shine Package'),
+            buildTableRow('Vehicle Type:', 'Sedan'),
+            buildTableRow('Service Type:', 'Exterior and Interior Cleaning'),
+            buildTableRow('Appointment Time:', 'Tomorrow at 10:00 AM'),
+            buildTableRow('Additional Requests:', 'Apply wax and vacuum the trunk'),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) =>
-                          QueuePage()), // Replace with your queue order page
+                    builder: (context) => QueuePage(), // Replace with your queue order page
+                  ),
                 );
               },
               style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
+                backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
               ),
-              child: Text(
-                'Confirm',
-                style: TextStyle(color: Colors.white),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: Text(
+                  'Confirm Order',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildTableRow(String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Text(
+        '$label $value',
+        style: TextStyle(
+          fontSize: 16,
         ),
       ),
     );

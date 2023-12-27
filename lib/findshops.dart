@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'shopdetail.dart'; // Import your shop detail page Dart file here
+import 'shopdetail.dart'; 
+import 'dashboard.dart';
 
 class FindShopsPage extends StatefulWidget {
   @override
@@ -14,10 +15,18 @@ class _FindShopsPageState extends State<FindShopsPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF086A77),
-        title: Image.asset(
-          'assets/Gatito.png',
-          width: 106,
-          height: 35,
+        title: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DashboardPage()),
+            );
+          },
+          child: Image.asset(
+            'assets/Gatito.png',
+            width: 106,
+            height: 35,
+          ),
         ),
       ),
       body: Padding(
@@ -64,28 +73,53 @@ class _FindShopsPageState extends State<FindShopsPage> {
                           height: 71,
                         ),
                         title: Text(
-                            'Shop Name'), // Replace with your actual shop name
+                          'Lorem Ipsum Carwash',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                                'Shop Type'), // Replace with your actual shop type
+                              'Hydrolic, Robot, Regular, Steam',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.grey,
+                              ),
+                            ),
                             Text(
-                                'Shop Address'), // Replace with your actual shop address
+                              'Nowhere Street No.39, Somewhere City',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black,
+                              ),
+                            ),
                             Text(
-                                'Open Status'), // Replace with your actual open status
+                              'Open',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.green,
+                              ),
+                            ),
                             Text(
-                                'Opening Hours'), // Replace with your actual opening hours
-                            Text(
-                                'Opening Days'), // Replace with your actual opening days
+                              'Open 7AM- Close 9PM, Open Everyday',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.grey,
+                              ),
+                            ),
                           ],
                         ),
                         onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    ShopDetailPage()), // Replace with your shop detail page
+                              builder: (context) =>
+                                  ShopDetailPage(), // Replace with your shop detail page
+                            ),
                           );
                         },
                       ),

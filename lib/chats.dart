@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'shopchat.dart'; // Import your shop chat page Dart file here
+import 'dashboard.dart'; // Import your dashboard page Dart file here
 
 class ChatsPage extends StatefulWidget {
   @override
@@ -14,10 +15,18 @@ class _ChatsPageState extends State<ChatsPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF086A77),
-        title: Image.asset(
-          'assets/Gatito.png',
-          width: 106,
-          height: 35,
+        title: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DashboardPage()),
+            );
+          },
+          child: Image.asset(
+            'assets/Gatito.png',
+            width: 106,
+            height: 35,
+          ),
         ),
       ),
       body: Center(
@@ -60,7 +69,7 @@ class _ChatsPageState extends State<ChatsPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ShopChatPage()), // Replace with your shop chat page
+                        MaterialPageRoute(builder: (context) => DashboardPage()),
                       );
                     },
                   );

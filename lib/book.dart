@@ -28,55 +28,65 @@ class _BookPageState extends State<BookPage> {
         title: Text('Book \'n Go!'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            DropdownButton<String>(
-  value: null,
-  hint: Text('Choose washing method'),
-  items: <String>['Hydrolic', 'Robot', 'Regular', 'Steam'].map((String value) {
-    return DropdownMenuItem<String>(
-      value: value,
-      child: Text(value),
-    );
-  }).toList(),
-  onChanged: null,
-),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              DropdownButton<String>(
+                value: null,
+                hint: Text('Choose washing method'),
+                items: <String>['Hydrolic', 'Robot', 'Regular', 'Steam'].map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: null,
+              ),
 
-            SizedBox(height: 20),
-            TextField(
-              controller: _timeController,
-              decoration: InputDecoration(
-                hintText: 'Enter time...',
-                filled: true,
-                fillColor: Colors.white,
+              SizedBox(height: 20),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.8,
+                child: TextField(
+                  controller: _timeController,
+                  decoration: InputDecoration(
+                    hintText: 'Enter time...',
+                    filled: true,
+                    fillColor: Colors.white,
+                  ),
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: _textController,
-              decoration: InputDecoration(
-                hintText: 'Add details regarding the order...',
-                filled: true,
-                fillColor: Colors.white,
+              SizedBox(height: 20),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.8,
+                child: TextField(
+                  controller: _textController,
+                  decoration: InputDecoration(
+                    hintText: 'Add details regarding the order...',
+                    filled: true,
+                    fillColor: Colors.white,
+                  ),
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ConfirmPage()), // Replace with your confirmation page
-                );
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ConfirmPage()), // Replace with your confirmation page
+                  );
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF1C3A4A)),
+                ),
+                child: Text(
+                  'Book Now!',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-              child: Text('Book Now!',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

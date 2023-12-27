@@ -8,6 +8,7 @@ class ShopChatPage extends StatefulWidget {
 
 class _ShopChatPageState extends State<ShopChatPage> {
   final TextEditingController _textController = TextEditingController();
+  List<ChatMessage> _chatMessages = [];
 
   @override
   Widget build(BuildContext context) {
@@ -28,18 +29,11 @@ class _ShopChatPageState extends State<ShopChatPage> {
       body: Column(
         children: <Widget>[
           Expanded(
-            child: ListView(
-              children: <Widget>[
-                ListTile(
-                  title: Text(
-                    'Welcome to Lorem Ipsum Carwash! We’re open everyday at 07.00 AM - 05.00 PM. Is there anything we can help you?',
-                    style: TextStyle(
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-                // Add more ListTile widgets for more chat messages
-              ],
+            child: ListView.builder(
+              itemCount: _chatMessages.length,
+              itemBuilder: (context, index) {
+                return ChatBubble(message: _chatMessages[index].text, isUser: _chatMessages[index].isUser);
+              },
             ),
           ),
           Container(
@@ -56,9 +50,7 @@ class _ShopChatPageState extends State<ShopChatPage> {
                 ),
                 IconButton(
                   icon: Icon(Icons.send),
-                  onPressed: () {
-                    // Handle the send button press
-                  },
+                  onPressed: _sendMessage,
                 ),
               ],
             ),
@@ -67,4 +59,67 @@ class _ShopChatPageState extends State<ShopChatPage> {
       ),
     );
   }
+
+  void _sendMessage() {
+    String message = _textController.text;
+
+    // Add the user's message to the chat
+    setState(() {
+      _chatMessages.add(ChatMessage(text: message, isUser: true));
+    });
+
+    // Dummy auto-reply
+    _sendAutoReply();
+
+    // Clear the text field
+    _textController.clear();
+  }
+
+  void _sendAutoReply() {
+    // Dummy auto-reply
+    String autoReply =
+        "I am a very dumbass dummy AI that is only coded to send this exact reply whenever a message is sent, Arigatou Very Much";
+
+    // Add the auto-reply to the chat
+    setState(() {
+      _chatMessages.add(ChatMessage(text: autoReply, isUser: false));
+    });
+  }
+}
+
+class ChatBubble extends StatelessWidget {
+  final String message;
+  final bool isUser;
+
+  const ChatBubble({Key? key, required this.message, required this.isUser}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Align(
+        alignment: isUser ? Alignment.topRight : Alignment.topLeft,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.grey[200],
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          padding: EdgeInsets.all(12.0),
+          child: Text(
+            message,
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ChatMessage {
+  final String text;
+  final bool isUser;
+
+  ChatMessage({required this.text, required this.isUser});
 }
